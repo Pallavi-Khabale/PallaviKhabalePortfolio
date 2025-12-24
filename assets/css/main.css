@@ -126,11 +126,11 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 2.85em;
+		font-size: 2.3em;
 	}
 
 	h3 {
-		font-size: 1.25em;
+		font-size: 0.9em;
 	}
 
 	h4 {
@@ -2178,7 +2178,7 @@ input, select, textarea {
 	.wrapper {
 		background: #fff;
 		margin: 0 0 2em 0;
-		padding: 6em 0 6em 0;
+		padding: 4em 0 4em 0;
 	}
 
 		.wrapper.style2 {
@@ -3184,3 +3184,163 @@ input, select, textarea {
 			opacity: 0;
 		}
 	}
+
+	.clearfix::after {
+		content: "";
+		display: block;
+		clear: both;
+	  }
+
+
+	/* Polaroid strip container */
+.polaroid-strip {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;                 /* compact spacing */
+	margin-top: 1em;
+	max-height: 400vh;           /* keeps sidebar balanced */
+	overflow-y: auto;           /* scroll only the strip */
+	padding-right: 0.5em;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+.polaroid-strip {
+	scrollbar-width: none;          /* Firefox */
+	-ms-overflow-style: none;       /* IE & Edge */
+  }
+  
+  .polaroid-strip::-webkit-scrollbar {
+	display: none;                  /* Chrome, Safari */
+  }
+  
+  
+  /* Individual polaroid */
+  .polaroid {
+	background: #ffffff;
+	padding: 0.4em 0.4em 0.8em;
+	border-radius: 6px;
+	box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+	max-width: 220px;           /* 🔑 keeps them small */
+	margin: 0 auto;
+	transform: rotate(-1deg);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  /* Slight variation for natural look */
+  .polaroid:nth-child(even) {
+	transform: rotate(1.2deg);
+  }
+  
+  /* Hover effect */
+  .polaroid:hover {
+	transform: rotate(0deg) scale(1.03);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+  }
+  
+  /* Polaroid image */
+  .polaroid img {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	display: block;
+  }
+  
+
+  /* Caption */
+  .polaroid p {
+	margin: 0.5em 0 0;
+	text-align: center;
+	font-size: 0.85rem;
+	font-style: italic;
+	color: #444;
+	line-height: 1.4;
+  }
+	
+  /* Paragraph / content photos – always straight */
+.para-photo {
+	transform: none !important;
+  }
+  
+  .para-photo:hover {
+	transform: none !important;
+	box-shadow: 0 6px 14px rgba(0,0,0,0.12) !important;
+  }
+  
+  
+/* ================================
+   CONTACT ME (Helios) – REAL FIX
+   Helios spacing comes from:
+   .row.gtr-XX { margin-top/left: -XXpx }
+   .row.gtr-XX > * { padding-top/left: XXpx }
+   ================================ */
+
+   #footer #contactme {
+	padding: 2em 0 1.25em 0 !important; /* less space above/below whole section */
+}
+
+/* Reduce space under "Contact Me" */
+#footer #contactme > header {
+	margin: 0 0 0.75em 0 !important;
+}
+#footer #contactme > header h2 {
+	margin: 0 !important;
+}
+
+/* Make the whole contact layout not stretch full width */
+#footer #contactme .container,
+#footer #contactme .row {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ✅ Reduce spacing between LEFT blocks (Address/Phone/Email)
+   Your left side uses: .row.gtr-25  */
+#footer #contactme .row.gtr-25 {
+	margin-top: -12px !important;
+	margin-left: -12px !important;
+}
+#footer #contactme .row.gtr-25 > * {
+	padding: 12px 0 0 12px !important;
+}
+
+/* Tighten text spacing inside left blocks */
+#footer #contactme h4 {
+	margin: 0 0 0.2em 0 !important;
+}
+#footer #contactme p {
+	margin: 0 0 0.6em 0 !important;
+}
+
+/* ✅ Reduce spacing between WHITE input boxes
+   The form rows are also using Helios row padding spacing */
+#footer #contactme form .row {
+	margin-top: -12px !important;
+	margin-left: -12px !important;
+}
+#footer #contactme form .row > * {
+	padding: 12px 0 0 12px !important;
+}
+
+/* Make inputs feel tighter */
+#footer #contactme input[type="text"],
+#footer #contactme input[type="email"],
+#footer #contactme input[type="tel"],
+#footer #contactme textarea {
+	font-size: 0.95rem;
+	padding: 0.7em 0.9em;
+	margin: 0 !important; /* kill any default margin */
+}
+
+#footer #contactme textarea {
+	min-height: 140px;
+	resize: vertical;
+}
+
+/* Send button spacing */
+#footer #contactme .button,
+#footer #contactme input[type="submit"],
+#footer #contactme button {
+	margin-top: 0.75em !important;
+	padding: 0.75em !important;
+}
