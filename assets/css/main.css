@@ -3384,12 +3384,3 @@ article.col-3 {
 .drama-counter::after {
   content: "🎬 Watched: " counter(dramaCount);
 }
-
-/* Mobile safety */
-@media screen and (max-width: 768px) {
-  .drama-counter {
-    position: static;
-    margin: 10px auto;
-    text-align: center;
-  }
-}
