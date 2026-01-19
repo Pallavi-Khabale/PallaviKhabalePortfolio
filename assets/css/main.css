@@ -3355,16 +3355,21 @@ body {
   counter-reset: dramaCount;
 }
 
-/* Count each drama */
+/* Count dramas */
 article.col-3 {
   counter-increment: dramaCount;
 }
 
-/* VISUAL placement (unchanged) */
+/* Create positioning context */
+.wrapper.style1 {
+  position: relative;
+}
+
+/* Counter – placed visually between ribbon & 2026 */
 .drama-counter {
-  position: fixed;
-  top: 155px;   /* tweak this if needed */
-  right: 35px;
+  position: absolute;
+  top: -45px;            /* pulls it UP into the gap */
+  right: 40px;
   padding: 10px 16px;
   background: rgba(88, 44, 130, 0.08);
   border-left: 4px solid #582c82;
@@ -3372,14 +3377,14 @@ article.col-3 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #582c82;
-  z-index: 999;
 }
 
+/* Text */
 .drama-counter::after {
   content: "🎬 Watched: " counter(dramaCount);
 }
 
-/* Mobile */
+/* Mobile safety */
 @media screen and (max-width: 768px) {
   .drama-counter {
     position: static;
@@ -3387,5 +3392,3 @@ article.col-3 {
     text-align: center;
   }
 }
-
-    
