@@ -3368,7 +3368,8 @@ article.col-3 {
 /* Counter – placed visually between ribbon & 2026 */
 .drama-counter {
   position: absolute;
-  top: -15px;            /* pulls it UP into the gap */
+  top: -45px;            /* pulls it UP into the gap */
+  margin-top: 30px; 
   right: 40px;
   padding: 10px 16px;
   background: rgba(88, 44, 130, 0.08);
