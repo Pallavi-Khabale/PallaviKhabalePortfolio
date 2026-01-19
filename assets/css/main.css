@@ -3346,23 +3346,46 @@ input, select, textarea {
 }
 
 
-/* Reset counter */
-.drama-section {
+/* ===============================
+   K-Drama Auto Counter (CSS only)
+   =============================== */
+
+/* Reset counter at page level */
+body {
   counter-reset: dramaCount;
 }
 
-/* Count each drama */
-.drama-card {
+/* Count each drama card */
+article.col-3 {
   counter-increment: dramaCount;
 }
 
-/* Display total */
-.drama-counter::after {
-  content: "🎬 Total dramas watched: " counter(dramaCount);
-  display: block;
-  text-align: center;
-  font-size: 1.3rem;
+/* Counter positioning */
+.drama-counter {
+  position: sticky;
+  top: 120px; /* below navbar */
+  float: right;
+  margin: 15px 40px 0 0;
+  padding: 10px 16px;
+  background: rgba(88, 44, 130, 0.08);
+  border-left: 4px solid #582c82;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin: 40px 0 10px;
-  color: #5e2b83;
+  color: #582c82;
+  z-index: 10;
+}
+
+/* Display text */
+.drama-counter::after {
+  content: "🎬 Watched: " counter(dramaCount);
+}
+
+/* Mobile safety */
+@media screen and (max-width: 768px) {
+  .drama-counter {
+    float: none;
+    margin: 10px auto;
+    text-align: center;
+  }
 }
