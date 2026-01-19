@@ -3350,22 +3350,21 @@ input, select, textarea {
    K-Drama Auto Counter (CSS only)
    =============================== */
 
-/* Reset counter at page level */
+/* Reset counter */
 body {
   counter-reset: dramaCount;
 }
 
-/* Count each drama card */
+/* Count each drama */
 article.col-3 {
   counter-increment: dramaCount;
 }
 
-/* Counter positioning */
+/* VISUAL placement (unchanged) */
 .drama-counter {
-  position: sticky;
-  top: 120px; /* below navbar */
-  float: right;
-  margin: 15px 40px 0 0;
+  position: fixed;
+  top: 155px;   /* tweak this if needed */
+  right: 35px;
   padding: 10px 16px;
   background: rgba(88, 44, 130, 0.08);
   border-left: 4px solid #582c82;
@@ -3373,19 +3372,20 @@ article.col-3 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #582c82;
-  z-index: 10;
+  z-index: 999;
 }
 
-/* Display text */
 .drama-counter::after {
   content: "🎬 Watched: " counter(dramaCount);
 }
 
-/* Mobile safety */
+/* Mobile */
 @media screen and (max-width: 768px) {
   .drama-counter {
-    float: none;
+    position: static;
     margin: 10px auto;
     text-align: center;
   }
 }
+
+    
